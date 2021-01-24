@@ -37,10 +37,10 @@ public class EmployeeController {
     }
     
     @GetMapping("/byDepartmentId")
-    @ApiOperation(value = "Returns the value of one employee for the given Id")
+    @ApiOperation(value = "Returns a list of employees for the given department Id")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "The employee has been successfully fetched"),
-            @ApiResponse(code = 404, message = "The employee of given id was not found")})
+            @ApiResponse(code = 200, message = "The employees has been successfully fetched"),
+            @ApiResponse(code = 404, message = "The employees for the given id was not found")})
     public List<EmployeeTO> getEmployeesByDeptId(@ApiParam(value = "The department id", required = true, example = "1001")
     											@RequestParam(name = "id") Long id) {
       return employeeService.getEmployeeByDepartment(id);
